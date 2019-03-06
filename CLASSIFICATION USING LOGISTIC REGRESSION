@@ -1,0 +1,21 @@
+import pandas as pd
+from sklearn.tree import DecisionTreeClassifier
+data=pd.read_csv("birthwt_train.csv")
+datatest=pd.read_csv("birthwt_test.csv")
+datatestr=datatest['id']
+datatestr=pd.DataFrame(datatestr)
+col=['id']
+datatestr.columns=col
+ytrain=data['low']
+xtrain=data.drop(['low'],axis=1)
+clf= DecisionTreeClassifier(random_state=101,criterion="gini")
+clf.fit(xtrain,ytrain)
+datatest=datatest.drop(['id'],axis=1)
+y_pred=clf.predict(datatest)
+y_pred
+datasample=datatestr
+ypredd=pd.DataFrame(y_pred)
+out=pd.concat([datasample,ypredd],axis=1)
+colnames=['id','low']
+out.columns=colnames
+out.to_csv('C:/Users/Administrator/Downloads/training-b7vYANkpyoMOq5J38aJ3zK7NQeAZW0z/out.csv')
