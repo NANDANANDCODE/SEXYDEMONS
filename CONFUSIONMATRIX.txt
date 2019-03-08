@@ -19,7 +19,9 @@ avg / total       0.94      0.93      0.93       858
 
 How can I interpret the above confusion matrix and classification report ??
 
- - Coming to confusion matrix, it is much detailed representation of what's going on with your labels. So there were 71 points in the first class (label 0). Out of these, your model was successful in identifying 54 of those correctly in label 0, but 17 were marked as label 4. Similarly look at second row. There were 43 points in class 1, but 36 of them were marked correctly. Your classifier predicted 1 in class 3 and 6 in class 4
+ - Coming to confusion matrix, it is much detailed representation of what's going on with your labels.
+ So there were 71 points in the first class (label 0). Out of these, your model was successful in identifying 54 of those correctly in label 0, but 17 were marked as label 4. 
+ Similarly look at second row. There were 43 points in class 1, but 36 of them were marked correctly. Your classifier predicted 1 in class 3 and 6 in class 4
 An ideal classifiers with 100% accuracy would produce a pure diagonal matrix which would have all the points predicted in their correct class.
 
 Coming to Recall/Precision. They are some of the mostly used measures in evaluating how good your system works. Now you had 71 points in first class (call it 0 class). Out of them your classifier was able to get 54 elements correctly. That's your recall. 54/71 = 0.76.
