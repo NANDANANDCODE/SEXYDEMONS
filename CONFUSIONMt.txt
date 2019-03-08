@@ -1,0 +1,28 @@
+Confussion matrix:
+[[ 54   0   0   0  17]
+ [  0  36   0   1   6]
+ [  0   0  66   5  18]
+ [  0   0   0 273  15]
+ [  0   0   0   0 367]]
+
+Clasification report:
+             precision    recall  f1-score   support
+
+          1       1.00      0.76      0.86        71
+          2       1.00      0.84      0.91        43
+          3       1.00      0.74      0.85        89
+          4       0.98      0.95      0.96       288
+          5       0.87      1.00      0.93       367
+
+avg / total       0.94      0.93      0.93       858
+
+
+How can I interpret the above confusion matrix and classification report ??
+
+ - Coming to confusion matrix, it is much detailed representation of what's going on with your labels. So there were 71 points in the first class (label 0). Out of these, your model was successful in identifying 54 of those correctly in label 0, but 17 were marked as label 4. Similarly look at second row. There were 43 points in class 1, but 36 of them were marked correctly. Your classifier predicted 1 in class 3 and 6 in class 4
+An ideal classifiers with 100% accuracy would produce a pure diagonal matrix which would have all the points predicted in their correct class.
+
+Coming to Recall/Precision. They are some of the mostly used measures in evaluating how good your system works. Now you had 71 points in first class (call it 0 class). Out of them your classifier was able to get 54 elements correctly. That's your recall. 54/71 = 0.76. Now look only at first column in the table. There is one cell with entry 54, rest all are zeros. This means your classifier marked 54 points in class 0, and all 54 of them were actually in class 0. This is precision. 54/54 = 1. Look at column marked 4. In this column, there are elements scattered in all the five rows. 367 of them were marked correctly. Rest all are incorrect. So that reduces your precision.
+
+F Measure is harmonic mean of Precision and Recall. Be sure you read details about these. https://en.wikipedia.org/wiki/Precision_and_recall
+
